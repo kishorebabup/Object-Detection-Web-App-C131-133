@@ -16,7 +16,7 @@ function modelLoaded(){
     objectDetector.detect(img, gotResult);
 }
 
-function gotResult(results, error){
+function gotResult(error, results){
     if(error){
         console.log(error);
     }
@@ -43,9 +43,9 @@ function draw(){
       noFill();
       stroke("red");
       percent = Math.floor(objects[i].confidence * 100);
-      text(objects[i].label + " " + percent + "%", objects[i].x, objects[i].y);
+      text(objects[i].label + " " + percent + "%", objects[i].x + 15, objects[i].y + 15);
       rect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
-     }
+     }  
 
    }
 
